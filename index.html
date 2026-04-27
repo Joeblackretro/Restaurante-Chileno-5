@@ -506,19 +506,25 @@
         /* ===== DISEÑO RESPONSIVO (Media Queries) ===== */
         /* Oportunidad de Mejora: Adaptabilidad para dispositivos móviles */
         @media screen and (max-width: 768px) {
-            /* 1. Ajustes del Encabezado (Evita que el texto y foto colapsen la pantalla) */
+            /* 1. Desactivar el sticky header en móviles para no tapar la pantalla */
+            .barra-superior {
+                position: static; 
+            }
+
+            /* 2. Ajustes del Encabezado (Evita que el texto y foto colapsen la pantalla) */
             .encabezado-flex {
                 flex-direction: column; /* Apila la imagen sobre el título */
-                gap: 10px; /* Menor separación */
-                padding: 10px;
+                gap: 5px; /* Menor separación */
+                padding: 10px 5px;
             }
             
+            /* Ocultamos las imágenes decorativas en móvil para ahorrar espacio visual, o las hacemos minúsculas */
             .icono-header {
-                height: 80px; /* Reduce drásticamente la imagen en celulares */
+                display: none; /* Mejor ocultarlas en celular para que el título respire */
             }
 
             header h1 {
-                font-size: 1.8rem; /* Título mucho más pequeño para evitar saltos de línea extremos */
+                font-size: 1.6rem; /* Título adaptado a pantallas estrechas */
                 line-height: 1.2;
             }
 
