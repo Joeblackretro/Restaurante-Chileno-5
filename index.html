@@ -506,22 +506,47 @@
         /* ===== DISEÑO RESPONSIVO (Media Queries) ===== */
         /* Oportunidad de Mejora: Adaptabilidad para dispositivos móviles */
         @media screen and (max-width: 768px) {
-            /* Ajustes para el contenedor general del formulario en pantallas pequeñas */
-            form {
-                margin: 20px 15px; /* Reduce márgenes laterales */
-                padding: 30px 20px; /* Reduce el padding interno para ganar espacio en pantalla */
+            /* 1. Ajustes del Encabezado (Evita que el texto y foto colapsen la pantalla) */
+            .encabezado-flex {
+                flex-direction: column; /* Apila la imagen sobre el título */
+                gap: 10px; /* Menor separación */
+                padding: 10px;
+            }
+            
+            .icono-header {
+                height: 80px; /* Reduce drásticamente la imagen en celulares */
             }
 
-            /* Ajuste para los radio buttons: cambia a diseño vertical en pantallas estrechas */
+            header h1 {
+                font-size: 1.8rem; /* Título mucho más pequeño para evitar saltos de línea extremos */
+                line-height: 1.2;
+            }
+
+            /* 2. Ajustes de la Navegación (Evita un bloque negro gigante) */
+            nav a {
+                padding: 8px 10px; /* Enlaces más compactos */
+                font-size: 0.85rem;
+            }
+            
+            /* Ajustes para evitar que las secciones queden escondidas detrás de la barra pegajosa */
+            section {
+                scroll-margin-top: 180px; 
+            }
+
+            /* 3. Ajustes de Formularios (Espacio y Táctil) */
+            form {
+                margin: 20px 10px; 
+                padding: 25px 20px; 
+            }
+
             .radio-group {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px; /* Separación vertical */
+                gap: 15px; 
             }
 
-            /* Ajuste de botones para experiencia táctil (UX Móvil) */
             .btn-primario {
-                padding: 18px; /* Área táctil más grande */
+                padding: 16px; 
                 font-size: 1.1rem;
             }
         }
