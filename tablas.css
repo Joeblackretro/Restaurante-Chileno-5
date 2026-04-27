@@ -42,22 +42,23 @@ tbody tr:hover {
 }
 
 /* ===== DISEÑO RESPONSIVO PARA TABLAS ===== */
-/* Adaptabilidad para dispositivos móviles (Evita que la tabla se salga de la pantalla) */
+/* Adaptabilidad para dispositivos móviles (Fuerza a la tabla a no salirse de la caja blanca) */
 @media screen and (max-width: 768px) {
     table {
-        display: block; /* Cambia a bloque para controlar el desbordamiento */
-        overflow-x: auto; /* Permite deslizar la tabla hacia los lados si no cabe entera */
-        -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+        table-layout: fixed; /* Fuerzamente restringe el ancho de la tabla al 100% de la pantalla */
+        width: 100%;
+        word-wrap: break-word; /* Permite que los textos largos bajen a la siguiente línea */
     }
 
     th {
-        padding: 10px 5px; /* Reduce el relleno interno para ganar espacio */
-        font-size: 0.85rem; /* Achica el texto de la cabecera */
-        letter-spacing: 0; /* Elimina espacio extra entre letras */
+        padding: 10px 4px; /* Reduce el relleno interno drásticamente */
+        font-size: 0.75rem; /* Achica bastante el texto de la cabecera */
+        letter-spacing: 0; 
     }
 
     td {
-        padding: 10px 5px; /* Reduce el relleno interno de las celdas */
-        font-size: 0.85rem; /* Achica el texto de los datos */
+        padding: 8px 4px; /* Reduce el relleno de las celdas */
+        font-size: 0.8rem; /* Achica el texto de los datos */
+        word-break: break-word; /* Corta las palabras muy largas si es necesario */
     }
 }
