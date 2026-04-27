@@ -40,3 +40,24 @@ tbody tr:hover {
     background-color: #f4ebd8; /* Cambio a un tono café-crema para interacción dinámica */
     transition: background-color 0.3s ease; /* Transición suave en el cambio de color */
 }
+
+/* ===== DISEÑO RESPONSIVO PARA TABLAS ===== */
+/* Adaptabilidad para dispositivos móviles (Evita que la tabla se salga de la pantalla) */
+@media screen and (max-width: 768px) {
+    table {
+        display: block; /* Cambia a bloque para controlar el desbordamiento */
+        overflow-x: auto; /* Permite deslizar la tabla hacia los lados si no cabe entera */
+        -webkit-overflow-scrolling: touch; /* Desplazamiento suave en iOS */
+    }
+
+    th {
+        padding: 10px 5px; /* Reduce el relleno interno para ganar espacio */
+        font-size: 0.85rem; /* Achica el texto de la cabecera */
+        letter-spacing: 0; /* Elimina espacio extra entre letras */
+    }
+
+    td {
+        padding: 10px 5px; /* Reduce el relleno interno de las celdas */
+        font-size: 0.85rem; /* Achica el texto de los datos */
+    }
+}
